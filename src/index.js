@@ -34,13 +34,13 @@ function firstRenderMarkupGallery (searchIteam) {
             return Notify.info ('Unfortunately, there are not any matches. Try again, please') 
         }
 
-//         if (response.hits.length < 40) {
-// loadMoreBtn.classList.add('display-none')
-//         }
+        if (response.hits.length < 40) {
+loadMoreBtn.classList.add('display-none')
+        }
 
-        // gallery.innerHTML = '';
+        gallery.innerHTML = '';
       Notify.info(`We have found ${response.totalHits} images.`);
-      gallery.insertAdjacentHTML('afterbegin', makeMarkupGallery(response.hits));
+      gallery.insertAdjacentHTML('beforeend', makeMarkupGallery(response.hits));
     
       if (response.hits.length === 40) {
         loadMoreBtn.classList.remove('display-none')
